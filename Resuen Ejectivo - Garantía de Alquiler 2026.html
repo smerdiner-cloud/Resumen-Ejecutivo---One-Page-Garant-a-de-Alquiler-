@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Garantía de Alquiler — Resumen Ejecutivo 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Domine:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:   #3A57F0;
+  --cyan:   #33CCFF;
+  --green:  #0FBC49;
+  --purple: #EEB4FD;
+  --red:    #FF3333;
+  --mint:   #5AF27E;
+  --dark:   #080808;
+  --off:    #F4F4F2;
+  --muted:  #737373;
+  --text:   #111111;
+  --border: #E2E2DF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: var(--text);
+  background: #FAFAF8;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--dark);
+  padding: 0 60px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan), var(--green), var(--purple));
+}
+.header-left {
+  padding: 36px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  z-index: 2;
+}
+.header-eyebrow {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+}
+.header-title {
+  font-family: 'Domine', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.05;
+  letter-spacing: -.2px;
+}
+.header-title em {
+  font-style: normal;
+  color: var(--cyan);
+}
+.header-sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,.42);
+  margin-top: 2px;
+}
+.header-logos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 2;
+  padding: 36px 0;
+}
+.header-logos img { height: 18px; filter: brightness(0) invert(1) opacity(.7); }
+.header-logos .sep { width: 1px; height: 18px; background: rgba(255,255,255,.15); }
+.header-bg-num {
+  position: absolute;
+  right: 200px;
+  bottom: -24px;
+  font-family: 'Domine', serif;
+  font-size: 160px;
+  font-weight: 700;
+  color: rgba(255,255,255,.03);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── INTRO STRIP ── */
+.intro-strip {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,.06);
+  padding: 18px 60px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.intro-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: rgba(255,255,255,.5);
+}
+.intro-pill::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.ip-blue::before  { background: var(--blue); }
+.ip-cyan::before  { background: var(--cyan); }
+.ip-green::before { background: var(--green); }
+.ip-purple::before{ background: var(--purple); }
+.intro-div { width: 1px; height: 14px; background: rgba(255,255,255,.1); }
+.intro-tagline {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,.25);
+  letter-spacing: .05em;
+  font-style: italic;
+}
+
+/* ── PAGE BODY ── */
+.page { max-width: 1200px; margin: 0 auto; padding: 48px 60px 72px; }
+
+/* ── SECTION LABEL ── */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  margin-top: 48px;
+}
+.section-label:first-child { margin-top: 0; }
+.sl-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.sl-num {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sl-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.sl-line { flex: 1; height: 1px; background: var(--border); }
+
+/* ── MESA HEADER ── */
+.mesa-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+.mesa-tag {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.mesa-headline {
+  font-family: 'Domine', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.15;
+  letter-spacing: -.3px;
+}
+.mesa-sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-top: 6px;
+  max-width: 680px;
+}
+
+/* ── GRID CARDS ── */
+.cards-grid {
+  display: grid;
+  gap: 12px;
+}
+.cg-2 { grid-template-columns: 1fr 1fr; }
+.cg-4 { grid-template-columns: repeat(4, 1fr); }
+.cg-3 { grid-template-columns: repeat(3, 1fr); }
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.card-num {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.3;
+}
+.card-body {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ── COMPARISON TABLE ── */
+.comp { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.comp thead th {
+  padding: 9px 14px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .12em;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+  background: var(--off);
+  color: var(--muted);
+}
+.comp thead th.th-bad  { color: var(--red); }
+.comp thead th.th-good { color: var(--green); }
+.comp tbody td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  font-weight: 300;
+  color: var(--text);
+}
+.comp tbody td:first-child { font-weight: 400; color: var(--dark); }
+.comp tbody tr:last-child td { border-bottom: none; }
+.comp tbody tr:hover td { background: #FAFAF8; }
+.td-bad  { color: var(--red);   font-weight: 600; }
+.td-good { color: var(--green); font-weight: 600; }
+
+/* ── METRIC PILLS ── */
+.metrics-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.metric-pill {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 100px;
+}
+.mp-val {
+  font-family: 'Domine', serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+.mp-lbl {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+
+/* ── QUOTE BLOCK ── */
+.quote-block {
+  border-left: 3px solid;
+  padding: 12px 18px;
+  border-radius: 0 5px 5px 0;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ── TIMELINE HITOS ── */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.tl-col { border-right: 1px solid var(--border); }
+.tl-col:last-child { border-right: none; }
+.tl-period {
+  background: var(--dark);
+  color: rgba(255,255,255,.7);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+}
+.tl-items { padding: 10px 14px; background: #fff; display: flex; flex-direction: column; gap: 6px; }
+.tl-item {
+  font-size: 11.5px;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+}
+.tl-item::before {
+  content: '→';
+  color: var(--blue);
+  font-weight: 600;
+  flex-shrink: 0;
+  font-size: 10px;
+  margin-top: 1px;
+}
+.tl-item.done { color: var(--muted); text-decoration: line-through; }
+.tl-item.done::before { content: '✓'; color: var(--green); text-decoration: none; }
+
+/* ── ACTOR GRID (comms) ── */
+.actor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.actor-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 3px solid;
+  border-radius: 0 0 6px 6px;
+  padding: 14px 16px;
+}
+.actor-name {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.actor-items { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.actor-items li {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.45;
+  padding-left: 12px;
+  position: relative;
+}
+.actor-items li::before {
+  content: '·';
+  position: absolute;
+  left: 3px;
+  font-weight: 700;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, var(--border), transparent);
+  margin: 44px 0;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--dark);
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-left {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(255,255,255,.25);
+  letter-spacing: .06em;
+}
+.footer-right {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.18);
+}
+.footer-bar {
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan), var(--green), var(--purple));
+}
+
+/* ── FLOW (siniestros) ── */
+.flow-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.flow-col {
+  border-radius: 6px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.flow-col-before {
+  background: rgba(255,51,51,.04);
+  border: 1px solid rgba(255,51,51,.15);
+}
+.flow-col-after {
+  background: rgba(15,188,73,.04);
+  border: 1px solid rgba(15,188,73,.15);
+}
+.flow-hdr {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.flow-hdr-before { color: var(--red); }
+.flow-hdr-after  { color: var(--green); }
+.flow-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.4;
+}
+.flow-n {
+  width: 18px; height: 18px; border-radius: 50%;
+  font-size: 9px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+}
+.flow-col-before .flow-n { background: var(--red); }
+.flow-col-after  .flow-n { background: var(--green); }
+.flow-timer {
+  font-size: 11px; font-weight: 600;
+  padding: 6px 10px; border-radius: 3px;
+  margin-top: 4px;
+}
+.flow-col-before .flow-timer { background: var(--red); color: #fff; }
+.flow-col-after  .flow-timer { background: var(--green); color: #fff; }
+
+/* ── OPS TABLE ── */
+.ops-tbl { width:100%; border-collapse: collapse; font-size: 12.5px; }
+.ops-tbl thead th {
+  padding: 9px 14px;
+  background: var(--dark); color: rgba(255,255,255,.6);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 9.5px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .12em;
+  text-align: left;
+  border-right: 1px solid rgba(255,255,255,.07);
+}
+.ops-tbl thead th:last-child { border-right: none; }
+.ops-tbl tbody td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  vertical-align: middle;
+  line-height: 1.55;
+}
+.ops-tbl tbody td:last-child { border-right: none; }
+.ops-tbl tbody tr:last-child td { border-bottom: none; }
+.ops-tbl tbody tr:hover td { background: #FAFAF8; }
+.ops-key { font-weight: 600; color: var(--dark); font-size: 12px; }
+.ops-val { font-weight: 300; color: var(--muted); font-size: 12px; }
+.ops-res { font-weight: 600; color: var(--green); font-size: 12px; }
+
+/* ── FADE IN ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(14px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.page > * {
+  animation: fadeUp .5s ease both;
+}
+.section-label { animation-delay: .05s; }
+
+/* ── PRINT ── */
+@media print {
+  body { background: #fff; }
+  .header, .intro-strip, .footer, .footer-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <div class="header-eyebrow">Resumen ejecutivo · Transformación 2026</div>
+    <div class="header-title">Garantía de <em>Alquiler</em></div>
+    <div class="header-sub">Cuatro mesas. Un producto transformado. Mayo–Diciembre 2026.</div>
+  </div>
+  <div class="header-logos">
+    <img src="https://www.zurichsantander.com.uy/static/images/zurichSantanderWhiteLogo.png" alt="Zurich Santander">
+    <div class="sep"></div>
+    <img src="https://www.zurichsantander.com.uy/static/images/GA-LOGO.png" alt="GA">
+  </div>
+  <div class="header-bg-num">GA</div>
+</div>
+
+<!-- INTRO STRIP -->
+<div class="intro-strip">
+  <span class="intro-pill ip-blue">01 · Comercial &amp; Distribución</span>
+  <div class="intro-div"></div>
+  <span class="intro-pill ip-cyan">02 · Comunicaciones</span>
+  <div class="intro-div"></div>
+  <span class="intro-pill ip-green">03 · Operaciones</span>
+  <div class="intro-div"></div>
+  <span class="intro-pill ip-purple">04 · Siniestros</span>
+  <div class="intro-div"></div>
+  <span class="intro-tagline">"No hay pricing, no hay modelo, no hay sistema. Hay piezas sueltas con potencial — y un plan para conectarlas."</span>
+</div>
+
+<div class="page">
+
+  <!-- ═══════════════ MESA 01 — COMERCIAL ═══════════════ -->
+  <div class="section-label">
+    <div class="sl-dot" style="background:var(--blue);"></div>
+    <span class="sl-num">Mesa 01</span>
+    <span class="sl-title">Comercial &amp; Distribución</span>
+    <div class="sl-line"></div>
+    <span class="mesa-tag" style="background:rgba(58,87,240,.08);color:var(--blue);">TO BE</span>
+  </div>
+
+  <div class="mesa-header">
+    <div>
+      <div class="mesa-headline">El plan en marcha: 11 hitos,<br>Mayo–Diciembre 2026</div>
+      <div class="mesa-sub">Cuatro frentes en paralelo: pricing, descuentos, Alquila Ahorra y modelo de hunting con CDLC. El objetivo no es rediseñar un modelo — es construir uno donde no existía.</div>
+    </div>
+    <div class="metrics-row" style="margin-top:0;flex-shrink:0;">
+      <div class="metric-pill">
+        <div class="mp-val" style="color:var(--blue);">11</div>
+        <div class="mp-lbl">Hitos</div>
+      </div>
+      <div class="metric-pill">
+        <div class="mp-val" style="color:var(--blue);">8</div>
+        <div class="mp-lbl">Meses</div>
+      </div>
+      <div class="metric-pill">
+        <div class="mp-val" style="color:var(--blue);">3</div>
+        <div class="mp-lbl">Orgs. involucradas</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-col">
+      <div class="tl-period" style="background:var(--blue);">Mayo</div>
+      <div class="tl-items">
+        <div class="tl-item done">Presentación a directores Santander</div>
+        <div class="tl-item done">Discovery modelo CDLC</div>
+        <div class="tl-item">Inicio: Pricing · Descuentos · Alquila Ahorra</div>
+      </div>
+    </div>
+    <div class="tl-col">
+      <div class="tl-period" style="background:var(--blue);">Jun – Jul</div>
+      <div class="tl-items">
+        <div class="tl-item">Pricing inicial con equipo de Producto</div>
+        <div class="tl-item">Modelo de descuentos: criterios y flujo</div>
+        <div class="tl-item">Revisión esquema Alquila Ahorra</div>
+        <div class="tl-item">Modelo de hunting con CDLC</div>
+      </div>
+    </div>
+    <div class="tl-col">
+      <div class="tl-period" style="background:var(--blue);">Ago – Sep</div>
+      <div class="tl-items">
+        <div class="tl-item">Avance modelo de hunting</div>
+        <div class="tl-item">Estrategia de marketing y comunicación</div>
+        <div class="tl-item">Evaluación contratos inmobiliarias</div>
+      </div>
+    </div>
+    <div class="tl-col">
+      <div class="tl-period" style="background:var(--blue);">Oct – Dic</div>
+      <div class="tl-items">
+        <div class="tl-item">Política de distribución / intermediarios</div>
+        <div class="tl-item">Cierre: Pricing · Descuentos · Alquila Ahorra</div>
+        <div class="tl-item">Cierre: Modelo de hunting con CDLC</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-block" style="border-color:var(--blue);background:rgba(58,87,240,.04);margin-top:14px;">
+    "Definir el modelo es el 30% del trabajo. Ejecutarlo en paralelo con tres organizaciones es el 70%."
+  </div>
+
+
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════ MESA 02 — COMUNICACIONES ═══════════════ -->
+  <div class="section-label">
+    <div class="sl-dot" style="background:var(--cyan);"></div>
+    <span class="sl-num">Mesa 02</span>
+    <span class="sl-title">Comunicaciones</span>
+    <div class="sl-line"></div>
+    <span class="mesa-tag" style="background:rgba(15,188,73,.08);color:var(--green);">TO BE</span>
+  </div>
+
+  <div class="mesa-header">
+    <div>
+      <div class="mesa-headline">Del silencio al acompañamiento.<br>De lo genérico a lo relevante.</div>
+      <div class="mesa-sub">El mismo producto. Una experiencia completamente diferente. Cuatro actores con journey completo, 100% automatizado.</div>
+    </div>
+    <div class="metrics-row" style="margin-top:0;flex-shrink:0;">
+      <div class="metric-pill">
+        <div class="mp-val" style="color:var(--green);">+19</div>
+        <div class="mp-lbl">Touchpoints / actor / año</div>
+      </div>
+      <div class="metric-pill">
+        <div class="mp-val" style="color:var(--green);">4</div>
+        <div class="mp-lbl">Actores con journey</div>
+      </div>
+      <div class="metric-pill">
+        <div class="mp-val" style="color:var(--green);">8</div>
+        <div class="mp-lbl">Etapas proactivas</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actor-grid" style="margin-bottom:16px;">
+    <div class="actor-card" style="border-top-color:var(--blue);">
+      <div class="actor-name" style="color:var(--blue);">Inquilino</div>
+      <ul class="actor-items">
+        <li>Pago confirmado + onboarding con asistencias</li>
+        <li>Recordatorio de vigencia durante el año</li>
+        <li>Avisos de renovación a 30 y 15 días</li>
+        <li>Impago automatizado + alerta en siniestro</li>
+      </ul>
+    </div>
+    <div class="actor-card" style="border-top-color:var(--green);">
+      <div class="actor-name" style="color:var(--green);">Propietario</div>
+      <ul class="actor-items">
+        <li>Confirmación de GA aprobada desde el día 1</li>
+        <li>Welcome pack de cobertura + recordatorio de valor</li>
+        <li>Aviso de renovación + alerta de impago</li>
+        <li>Presiniestro confirmado + seguimiento en portal</li>
+      </ul>
+    </div>
+    <div class="actor-card" style="border-top-color:var(--cyan);">
+      <div class="actor-name" style="color:#0090BB;">Inmobiliaria</div>
+      <ul class="actor-items">
+        <li>Confirmación por expediente + welcome pack</li>
+        <li>Aviso de renovación de cartera + comisión</li>
+        <li>Alerta de impago de sus clientes</li>
+        <li>Gestión de siniestros en plataforma Mi Casa</li>
+      </ul>
+    </div>
+    <div class="actor-card" style="border-top-color:var(--purple);">
+      <div class="actor-name" style="color:#9333EA;">Codeudor</div>
+      <ul class="actor-items">
+        <li>Por primera vez: welcome pack + GA activa</li>
+        <li>Comunicación en renovación</li>
+        <li>Alerta de impago + notificación de escalada</li>
+      </ul>
+    </div>
+  </div>
+
+  <table class="comp">
+    <thead>
+      <tr>
+        <th style="width:42%;">Dimensión</th>
+        <th class="th-bad">AS IS</th>
+        <th class="th-good">TO BE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Touchpoints promedio por actor / año</td><td class="td-bad">~2</td><td class="td-good">+19</td></tr>
+      <tr><td>Actores con journey comunicacional completo</td><td class="td-bad">1 (parcial)</td><td class="td-good">4</td></tr>
+      <tr><td>Proceso de impago automatizado</td><td class="td-bad">✗</td><td class="td-good">✓</td></tr>
+      <tr><td>Confirmación inmediata en siniestro</td><td class="td-bad">✗</td><td class="td-good">✓</td></tr>
+      <tr><td>Carga manual del equipo operativo</td><td class="td-bad">Alta</td><td class="td-good">Reducida sustancialmente</td></tr>
+    </tbody>
+  </table>
+
+  <div class="quote-block" style="border-color:var(--green);background:rgba(15,188,73,.04);margin-top:14px;">
+    "No es una mejora incremental. Es un nuevo estándar de experiencia."
+  </div>
+
+
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════ MESA 03 — OPERACIONES ═══════════════ -->
+  <div class="section-label">
+    <div class="sl-dot" style="background:var(--green);"></div>
+    <span class="sl-num">Mesa 03</span>
+    <span class="sl-title">Operaciones</span>
+    <div class="sl-line"></div>
+    <span class="mesa-tag" style="background:rgba(15,188,73,.08);color:var(--green);">TO BE</span>
+  </div>
+
+  <div class="mesa-header" style="margin-bottom:16px;">
+    <div>
+      <div class="mesa-headline">Del cobro manual al ciclo<br>completamente automatizado</div>
+      <div class="mesa-sub">Tokenización, base unificada, mora activa y cierre digital. El ciclo completo de la póliza pasa a operar sin intervención manual.</div>
+    </div>
+  </div>
+
+  <table class="ops-tbl" style="border:1px solid var(--border);border-radius:6px;overflow:hidden;">
+    <thead>
+      <tr>
+        <th style="width:22%;">Frente</th>
+        <th style="width:36%;">Qué cambia</th>
+        <th>Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ops-key">Cobro del año 2</td>
+        <td class="ops-val">Tokenización en el primer pago → débito automático en renovación. Sin depender de que el cliente recuerde pagar.</td>
+        <td class="ops-res">Renovación sin fricción</td>
+      </tr>
+      <tr>
+        <td class="ops-key">Base de datos</td>
+        <td class="ops-val">Unificación de las dos bases hoy existentes. Un único sistema de verdad para cobro, mora, comunicaciones y reportes.</td>
+        <td class="ops-res">Decisiones sobre datos confiables</td>
+      </tr>
+      <tr>
+        <td class="ops-key">Gestión de mora</td>
+        <td class="ops-val">De reactiva a activa. Recordatorio automático → gestor API → clearing → baja ordenada. Sin seguimientos manuales indefinidos.</td>
+        <td class="ops-res">Proceso medible y controlado</td>
+      </tr>
+      <tr>
+        <td class="ops-key">Cierre de ciclo</td>
+        <td class="ops-val">Tabla de términos cortos en sistema, carga digital por inmobiliarias, imputación automática de devoluciones.</td>
+        <td class="ops-res">Sin fricción para el cliente</td>
+      </tr>
+      <tr>
+        <td class="ops-key">Visibilidad</td>
+        <td class="ops-val">Dashboard de cobranza v1 en Q2 2026. La gestión pasa de reactiva a anticipatoria.</td>
+        <td class="ops-res">No se gestiona lo que no se ve</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="quote-block" style="border-color:var(--green);background:rgba(15,188,73,.04);margin-top:14px;">
+    "La mejora más grande del año no fue un proyecto nuevo: fue cambiar un número en el sistema. El mismo principio escala ahora a toda la operación."
+  </div>
+
+
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════ MESA 04 — SINIESTROS ═══════════════ -->
+  <div class="section-label">
+    <div class="sl-dot" style="background:var(--purple);"></div>
+    <span class="sl-num">Mesa 04</span>
+    <span class="sl-title">Siniestros</span>
+    <div class="sl-line"></div>
+    <span class="mesa-tag" style="background:rgba(192,132,252,.1);color:var(--purple);">TO BE</span>
+  </div>
+
+  <div class="mesa-header" style="margin-bottom:16px;">
+    <div>
+      <div class="mesa-headline">De la dispersión a la integración.<br>Del silencio de 5 días a la respuesta inmediata.</div>
+      <div class="mesa-sub">El siniestro es el momento más crítico del producto. Hoy tiene un silencio de casi una semana. Eso cambia.</div>
+    </div>
+    <div class="metrics-row" style="margin-top:0;flex-shrink:0;">
+      <div class="metric-pill">
+        <div class="mp-val" style="color:var(--purple);">4–5d</div>
+        <div class="mp-lbl">Hoy: sin contacto</div>
+      </div>
+      <div class="metric-pill">
+        <div class="mp-val" style="color:var(--green);">0d</div>
+        <div class="mp-lbl">TO BE: mismo día</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-compare" style="margin-bottom:14px;">
+    <div class="flow-col flow-col-before">
+      <div class="flow-hdr flow-hdr-before">⏱ Proceso actual</div>
+      <div class="flow-step"><div class="flow-n">1</div>Formulario web pública</div>
+      <div class="flow-step"><div class="flow-n">2</div>Mail a casilla siniestros</div>
+      <div class="flow-step"><div class="flow-n">3</div>Ticket en Jira</div>
+      <div class="flow-step"><div class="flow-n">4</div>Evaluación con estudio jurídico</div>
+      <div class="flow-step"><div class="flow-n">5</div>Ingreso al sistema core</div>
+      <div class="flow-step"><div class="flow-n">6</div>Pedido de documentación al cliente</div>
+      <div class="flow-timer">⏱️ 4–5 días sin contacto al cliente</div>
+    </div>
+    <div class="flow-col flow-col-after">
+      <div class="flow-hdr flow-hdr-after">✅ Proceso TO BE</div>
+      <div class="flow-step"><div class="flow-n">1</div>Formulario recibido</div>
+      <div class="flow-step"><div class="flow-n">2</div>Priorización e ingreso como presiniestro en Rector</div>
+      <div class="flow-step"><div class="flow-n">3</div>Confirmación automática: registrado + documentación + próximos pasos</div>
+      <div class="flow-timer">⚡ Respuesta el mismo día (días hábiles)</div>
+      <div style="font-size:11.5px;font-weight:300;color:var(--muted);margin-top:8px;line-height:1.55;">
+        <strong style="color:var(--green);font-weight:600;">Estratégico:</strong> Portal privado ZS para propietario · Plataforma Mi Casa para inmobiliaria · Seguimiento en tiempo real.
+      </div>
+    </div>
+  </div>
+
+  <div class="cards-grid cg-4">
+    <div class="card" style="border-top:3px solid var(--green);">
+      <div class="card-num" style="color:var(--green);">01</div>
+      <div class="card-title">Eficiencia</div>
+      <div class="card-body">Ingreso inmediato en Rector como presiniestro. Elimina la triple carga manual.</div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--green);">
+      <div class="card-num" style="color:var(--green);">02</div>
+      <div class="card-title">Trazabilidad</div>
+      <div class="card-body">Rector como sistema central. Historial completo y auditable sin buscar en tres sistemas.</div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--green);">
+      <div class="card-num" style="color:var(--green);">03</div>
+      <div class="card-title">Centralización</div>
+      <div class="card-body">Gestor documental integrado. El Excel del analista deja de existir.</div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--green);">
+      <div class="card-num" style="color:var(--green);">04</div>
+      <div class="card-title">Escalabilidad</div>
+      <div class="card-body">OL generadas por el proveedor. El proceso escala con el volumen sin frenar al equipo.</div>
+    </div>
+  </div>
+
+  <div class="quote-block" style="border-color:var(--purple);background:rgba(192,132,252,.05);margin-top:14px;">
+    "El siniestro es el momento en que el cliente más necesita sentir que estamos. Hoy, ese momento tiene un silencio de casi una semana."
+  </div>
+
+
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════ CIERRE ═══════════════ -->
+  <div style="background:var(--dark);border-radius:8px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;">La visión completa</div>
+      <div style="font-family:'Domine',serif;font-size:24px;font-weight:700;color:#fff;line-height:1.1;">Cuatro piezas.<br><span style="color:var(--cyan);">Una transformación.</span></div>
+      <div style="font-size:13px;font-weight:300;color:rgba(255,255,255,.4);line-height:1.65;margin-top:10px;max-width:480px;">
+        Comercial construye el modelo que falta. Comunicaciones rompe el silencio. Operaciones automatiza el ciclo. Siniestros cierra la promesa al cliente. Juntas, estas cuatro mesas cierran el círculo completo de la Garantía de Alquiler.
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div style="width:40px;height:40px;border-radius:8px;background:var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Open Sans',sans-serif;font-size:11px;font-weight:700;color:#fff;">01</div>
+        <div style="font-family:'Open Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);">Comercial</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div style="width:40px;height:40px;border-radius:8px;background:var(--cyan);display:flex;align-items:center;justify-content:center;font-family:'Open Sans',sans-serif;font-size:11px;font-weight:700;color:#fff;">02</div>
+        <div style="font-family:'Open Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);">Comun.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div style="width:40px;height:40px;border-radius:8px;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Open Sans',sans-serif;font-size:11px;font-weight:700;color:#fff;">03</div>
+        <div style="font-family:'Open Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);">Operac.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div style="width:40px;height:40px;border-radius:8px;background:var(--purple);display:flex;align-items:center;justify-content:center;font-family:'Open Sans',sans-serif;font-size:11px;font-weight:700;color:#fff;">04</div>
+        <div style="font-family:'Open Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);">Siniest.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<!-- FOOTER -->
+<div class="footer-bar"></div>
+<div class="footer">
+  <div class="footer-left">Garantía de Alquiler · Transformación 2026 · Resumen Ejecutivo</div>
+  <div class="footer-right">Zurich Santander · Confidencial</div>
+</div>
+
+</body>
+</html>
